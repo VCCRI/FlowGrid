@@ -9,7 +9,7 @@ def setting_arg():
 	parser.add_argument('--d',type=float, required=True,dest="eps",
 		help='input the maximun distance for connected bins')
 	parser.add_argument('--o',type=str, dest="output",
-		help='input the maximun distance for connected bins')
+		help='input the output location')
 	pars=parser.parse_args()
 	file=pars.file
 	bin_n=pars.bin_n
