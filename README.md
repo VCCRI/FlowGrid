@@ -12,13 +12,15 @@ pip install -r requirements.txt
 ```
 ## Usage
 A summary of the argument of sample code is included in the table below.
-argument | usage
----- | ---
---f | the input file name
---n | number of bins 
---t | threshold for high density bin
---d | maximun distance between two bins
---o | the output file name
+ 
+
+|argument | usage|
+| :----: | :----: |
+|--f | the input file name|
+|--n | number of bins |
+|--t | threshold for high density bin|
+|--d | maximun distance between two bins|
+|--o | the output file name|
 
 ## Sample
 After installing the dependent packages, you could try to use the sample code to run FlowGrid on sample data.
