@@ -69,15 +69,15 @@ class div_bin():
 	def unique(self):
 		idd=self.dividing_bins()
 		id_list=list(idd.keys())
-		counts=np.zeros(len(id_list),dtype=int)
-		unique_index=np.zeros(self.data.shape[0],dtype=u"int8")
+		counts=np.zeros(len(id_list))
+		unique_index=np.zeros(self.data.shape[0],dtype=int)
 		for k,i in enumerate(id_list):
 			counts[k]=idd[i].shape[0]
 			unique_index[idd[i]]=k
 		return np.array(id_list),unique_index,counts
 
 class FlowGrid():
-	def __init__(self,original_data,MinDenB=5,bin_n=14,eps=1, MinDenC=1000):
+	def __init__(self,original_data,MinDenB=3,bin_n=14,eps=1.5, MinDenC=1000):
 		"""
 		Here is the initial step of building the object of FlowGrid.
 		MinDenB, max_value, bin_n, eps and MinDenC are set in this step.
@@ -111,13 +111,16 @@ class FlowGrid():
 		get the distint set of coordinate with sample id and number of cell 
 		locating in the bin.
 		"""
-		scaler = MinMaxScaler(feature_range=(0, self.bin_n-10**(-6)), copy=False)
+		scaler = MinMaxScaler(feature_range=(0, self.bin_n-10**(-7)), copy=False)
 		scaler.fit(self.original_data)
 		X=scaler.transform(self.original_data).astype(u"int8")
+		unique_array,unique_index,counts=div_bin(X,self.bin_n).unique()
+		'''
 		if np.log(self.n)/np.log(10)>4 and self.d<6 and self.bin_n<6:
 			unique_array,unique_index,counts=div_bin(X,self.bin_n).unique()
 		else:
 			unique_array,unique_index,counts=np.unique(X,return_inverse=True,return_counts=True, axis=0)
+			'''
 		return unique_array,unique_index, counts
 
 	def density_query(self,unique_array,counts,nn_model):
@@ -167,7 +170,7 @@ class FlowGrid():
 		not be labelled, it will be label by index and if it is core 
 		bin, all non-labelled bin is put into queue for the next iteration.
 		"""
-		bin_labels= np.zeros(self.bins_number,dtype=u"int8")-1
+		bin_labels= np.zeros(self.bins_number,dtype="int")-1
 		filter_f=lambda x: bin_labels[x]==-1
 		index=0
 		queue=set()
