@@ -8,19 +8,23 @@ Our FlowGrid algorithm only csv format and each columns is seperated by `,`.
 ## Install
 Before using the package, we need to install the dependent package sklearn and numpy.
 ``` python
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
+```
+or
+``` python
+sudo pip install sklearn numpy
 ```
 ## Usage
 A summary of the argument of sample code is included in the table below.
  
 
-|argument | usage|
-| :----: | :----: |
-|--f | the input file name|
-|--n | number of bins |
-|--t | threshold for high density bin|
-|--d | maximun distance between two bins|
-|--o | the output file name|
+|argument | usage| Require |
+| :----: | :----: | :----: |
+|--f | the input file name| True|
+|--n | number of bins | True |
+|--t | threshold for high density bin| False(default:40) |
+|--d | maximun distance between two bins| True |
+|--o | the output file name| False(default: out.csv) |
 
 ## Sample
 After installing the dependent packages, you could try to use the sample code to run FlowGrid on sample data.
