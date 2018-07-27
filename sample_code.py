@@ -1,15 +1,15 @@
 def setting_arg():
 	parser = argparse.ArgumentParser(description='FlowGrid Parameters')
-	parser.add_argument('--f',type=str, required=True,dest="file",
+	parser.add_argument('--f',type=str,required=True,dest="file",
 		help='input the file name')
-	parser.add_argument('--n',type=int, required=True,dest="bin_n",
+	parser.add_argument('--n',type=int,required=True,dest="bin_n",
 		help='input the number of bins')
-	parser.add_argument('--t',type=int, required=True,dest="MinDenC",
-		help='input the minimuns collective density for core bins')
-	parser.add_argument('--d',type=float, required=True,dest="eps",
+	parser.add_argument('--d',type=float,required=True,dest="eps",
 		help='input the maximun distance for connected bins')
-	parser.add_argument('--o',type=str, dest="output",
+	parser.add_argument('--o',type=str,required=False,dest="output",
 		help='input the output location')
+	parser.add_argument('--t',type=int,required=False,dest="MinDenC",
+		help='input the minimuns collective density for core bins')
 	pars=parser.parse_args()
 	file=pars.file
 	bin_n=pars.bin_n
@@ -27,7 +27,7 @@ def check_file_valid(file):
 		os._exit()
 	data=np.genfromtxt(file, delimiter=',',skip_header=1)
 	if data.shape[1]==1:
-		print(file+" format may not be wrong.")
+		print("The format of "+file+" may not be wrong.")
 		os._exit()
 	print("The number of cells is: "+ str(data.shape[0]))
 	print("The number of dimensions is: "+ str(data.shape[1]))

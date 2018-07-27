@@ -115,12 +115,10 @@ class FlowGrid():
 		scaler.fit(self.original_data)
 		X=scaler.transform(self.original_data).astype(u"int8")
 		unique_array,unique_index,counts=div_bin(X,self.bin_n).unique()
-		'''
-		if np.log(self.n)/np.log(10)>4 and self.d<6 and self.bin_n<6:
+		if np.log(self.n)/np.log(10)>4 and self.d<11 and self.bin_n<11:
 			unique_array,unique_index,counts=div_bin(X,self.bin_n).unique()
 		else:
 			unique_array,unique_index,counts=np.unique(X,return_inverse=True,return_counts=True, axis=0)
-			'''
 		return unique_array,unique_index, counts
 
 	def density_query(self,unique_array,counts,nn_model):
@@ -170,7 +168,7 @@ class FlowGrid():
 		not be labelled, it will be label by index and if it is core 
 		bin, all non-labelled bin is put into queue for the next iteration.
 		"""
-		bin_labels= np.zeros(self.bins_number,dtype="int")-1
+		bin_labels= np.zeros(self.bins_number,dtype="int8")-1
 		filter_f=lambda x: bin_labels[x]==-1
 		index=0
 		queue=set()
