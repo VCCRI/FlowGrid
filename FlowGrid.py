@@ -69,7 +69,7 @@ class div_bin():
 	def unique(self):
 		idd=self.dividing_bins()
 		id_list=list(idd.keys())
-		counts=np.zeros(len(id_list))
+		counts=np.zeros(len(id_list),dtype=int)
 		unique_index=np.zeros(self.data.shape[0],dtype=int)
 		for k,i in enumerate(id_list):
 			counts[k]=idd[i].shape[0]
@@ -77,7 +77,7 @@ class div_bin():
 		return np.array(id_list),unique_index,counts
 
 class FlowGrid():
-	def __init__(self,original_data,MinDenB=3,bin_n=14,eps=1.5, MinDenC=1000):
+	def __init__(self,original_data,MinDenB=3,bin_n=14,eps=1.5, MinDenC=40):
 		"""
 		Here is the initial step of building the object of FlowGrid.
 		MinDenB, max_value, bin_n, eps and MinDenC are set in this step.
