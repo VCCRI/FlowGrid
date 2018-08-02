@@ -54,5 +54,5 @@ if __name__ == "__main__":
 		np.savetxt(file[:-4]+"_FlowGrid_label.csv", label, delimiter=',',fmt="%d")
 	if label_file:
 		from sklearn.metrics import adjusted_rand_score as ARI
-		true_label=np.genfromtxt(label_file, delimiter=',',skip_header=1)
+		true_label=np.genfromtxt(label_file, delimiter=',')
 		print("ARI :"+ str(round(ARI(true_label,label)),3))
