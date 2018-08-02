@@ -45,7 +45,10 @@ if __name__ == "__main__":
 	file,bin_n,MinDenC,eps,output,label_file=setting_arg()
 	data=check_file_valid(file)
 	t1=time()
-	fg=FlowGrid(data,bin_n=bin_n,eps=eps, MinDenC=MinDenC)
+	if MinDenC:
+		fg=FlowGrid(data,bin_n=bin_n,eps=eps, MinDenC=MinDenC)
+	else:
+		fg=FlowGrid(data,bin_n=bin_n,eps=eps)
 	label=fg.clustering()
 	print("runing time: "+ str(round(time()-t1,3)))
 	if output:
@@ -55,4 +58,4 @@ if __name__ == "__main__":
 	if label_file:
 		from sklearn.metrics import adjusted_rand_score as ARI
 		true_label=np.genfromtxt(label_file, delimiter=',')
-		print("ARI :"+ str(round(ARI(true_label,label)),3))
+		print("ARI:"+ str(round(ARI(true_label,label),4)))
