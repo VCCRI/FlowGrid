@@ -32,4 +32,10 @@ After installing the dependent packages, you could try to use the sample code to
 ``` bash
 python sample_code.py --f sample_data.csv --n 4  --eps 1.1 --l sample_label.csv
 ```
-The result is saved at out.csv.
+The predicted label is saved at out.csv and the sample result is as follow.
+``` 
+The number of cells is: 23377
+The number of dimensions is: 4
+runing time: 0.027
+ARI:0.9816
+``` 
