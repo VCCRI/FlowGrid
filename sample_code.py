@@ -8,7 +8,7 @@ def setting_arg():
 		help='input the maximun distance for connected bins')
 	parser.add_argument('--t',type=int,required=False,dest="MinDenC",
 		help='input the minimuns collective density for core bins')
-	parser.add_argument('--o',type=str,required=False,dest="label",
+	parser.add_argument('--o',type=str,required=False,dest="output",
 		help='input the output location')
 	parser.add_argument('--l',type=str,required=False,dest="label",
 		help='input the label location')
