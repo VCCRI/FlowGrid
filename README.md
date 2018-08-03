@@ -18,17 +18,17 @@ sudo pip install sklearn numpy
 A summary of the argument of sample code is included in the table below.
  
 
-|argument | usage| Require |
+|Argument | Usage| Required? |
 | :----: | :----: | :----: |
-|--f | the input file name| True|
-|--n | number of bins | True |
-|--eps | maximun distance between two bins| True |
-|--t | threshold for high density bin| False(default:40) |
-|--o | the output file name| False(default: out.csv) |
-|--l | the true label file name| False|
+|--f | the input file name| required |
+|--n | number of bins | required |
+|--eps | maximun distance between two bins| required |
+|--t | threshold for high density bin| optional (default:40) |
+|--o | the output file name| optional (default: out.csv) |
+|--l | the true label file name| optional |
 
 ## Sample
-After installing the dependent packages, you could try to use the sample code to run FlowGrid on sample data.
+After installing all the dependent packages, you could try to use the sample code to run FlowGrid on the sample data.
 ``` bash
 python sample_code.py --f sample_data.csv --n 4  --eps 1.1 --l sample_label.csv
 ```
