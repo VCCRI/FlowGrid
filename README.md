@@ -8,7 +8,7 @@ Our FlowGrid algorithm could be applied into many format data set but the sample
 ## Install
 Before using the package, we need to install the dependent package sklearn and numpy.
 ``` python
-sudo pip install -r requirements.txt
+pip install -r requirements.txt --user
 ```
 or
 ``` python
