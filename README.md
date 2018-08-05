@@ -12,7 +12,7 @@ sudo pip install -r requirements.txt
 ```
 or
 ``` python
-sudo pip install sklearn numpy
+sudo pip install sklearn numpy scipy
 ```
 ## Usage
 A summary of the argument of sample code is included in the table below.
