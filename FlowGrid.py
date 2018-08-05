@@ -183,7 +183,7 @@ class FlowGrid():
 					if bin_labels[cur_bin]==-1:
 						bin_labels[cur_bin]=index
 						if core_non[cur_bin]:
-							queue.update(filter(filter_f,query_d[cur_bin]))
+							queue.update(list(filter(filter_f,query_d[cur_bin])))
 			else:
 				bin_list=list(filter(filter_f,bin_list))
 		return bin_labels
