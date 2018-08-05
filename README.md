@@ -3,7 +3,7 @@
     Contact: j.ho@victorchang.edu.au
     Copyright © 2018, Victor Chang Cardiac Research Institute
 ## Input data format
-Our FlowGrid algorithm could be applied into many format data set but the sample code only accept csv format. In the csv file, the first row is feature name and each columns is seperated by "`,`". If you have true label file , you could use --l filename to input label file for testing the ARI of FlowGrid result
+Our FlowGrid algorithm could be applied into many format data set but the sample code only accept csv format. In the csv file, the first row is feature name and each columns is seperated by "`,`". If you have true label file , you could use --l filename to input label file for testing the ARI of FlowGrid result.
 
 ## Install
 Before using the package, we need to install the dependent package sklearn and numpy.
@@ -11,8 +11,8 @@ Before using the package, we need to install the dependent package sklearn and n
 pip install -r requirements.txt --user
 ```
 or
-``` Python
-sudo pip install sklearn numpy scipy
+``` Bash
+pip install sklearn numpy scipy --user
 ```
 ## Usage
 A summary of the argument of sample code is included in the table below.
