@@ -44,5 +44,5 @@ ARI:0.9816
     Contact: xiunan@hkuh.k
     Copyright © 2019, Joshua W. K. Ho's Lab
 ## NOTE!
-FlowGrid implementation in Scanpy can be found in GITHUB PAGE:https://github.com/holab-hku/FlowGrid
+FlowGrid implementation in Scanpy can be found in github PAGE: https://github.com/holab-hku/FlowGrid
 
