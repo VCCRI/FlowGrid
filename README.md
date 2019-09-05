@@ -40,7 +40,6 @@ runing time: 0.027
 ARI:0.9816
 ``` 
 # FlowGrid for Scanpy usage
-GITHUB PAGE:https://github.com/holab-hku/FlowGrid
     Authors: Xiunan Fang and Joshua W. K. Ho
     Contact: xiunan@hkuh.k
     Copyright © 2019, Joshua W. K. Ho's Lab
