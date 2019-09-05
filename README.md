@@ -40,9 +40,10 @@ runing time: 0.027
 ARI:0.9816
 ``` 
 # FlowGrid for Scanpy usage
+GITHUB PAGE:https://github.com/holab-hku/FlowGrid
     Authors: Xiunan Fang and Joshua W. K. Ho
     Contact: xiunan@hkuh.k
     Copyright © 2019, Joshua W. K. Ho's Lab
-## The workflow
-The sample workflow using FlowGrid as the clustering method in Scanpy is shown in the scanpy_with_FlowGrid Notebook .ipynb
+## NOTE!
+FlowGrid implementation in Scanpy can be found in GITHUB PAGE:https://github.com/holab-hku/FlowGrid
 
